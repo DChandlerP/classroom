@@ -45,12 +45,10 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", classNumber='" + classNumber + '\'' +
-                ", studentID='" + studentID + '\'' +
-                '}';
+        return  firstName  + " " +
+                lastName + " | " + "Class: " +
+                classNumber + " | "+ "Student ID: " +
+                studentID ;
     }
 
     public int getId() {
