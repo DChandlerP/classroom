@@ -21,7 +21,7 @@ public class Student {
     private String firstName;
 
     @NotNull
-    private String lastname;
+    private String lastName;
 
     @NotNull
     //used numbers to identify classrooms, but this is arbitrary. The number isn't used for calculations.
@@ -35,10 +35,10 @@ public class Student {
     public Student() {
     }
 
-    public Student(int id, String firstName, String lastname, String classNumber, String studentID) {
+    public Student(int id, String firstName, String lastName, String classNumber, String studentID) {
         this.id = id;
         this.firstName = firstName;
-        this.lastname = lastname;
+        this.lastName = lastName;
         this.classNumber = classNumber;
         this.studentID = studentID;
     }
@@ -59,12 +59,12 @@ public class Student {
         this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getClassNumber() {
