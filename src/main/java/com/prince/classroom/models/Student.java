@@ -43,6 +43,16 @@ public class Student {
         this.studentID = studentID;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", classNumber='" + classNumber + '\'' +
+                ", studentID='" + studentID + '\'' +
+                '}';
+    }
+
     public int getId() {
         return id;
     }

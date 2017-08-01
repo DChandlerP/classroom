@@ -50,7 +50,25 @@ public class StudentController {
             model.addAttribute("students", studentDAO.findAll());
             return "student/add";
         }
+
         studentDAO.save(newStudent);
+        return "redirect:";
+    }
+
+    @RequestMapping(value = "remove", method = RequestMethod.GET)
+    public String displayRemoveStudentForm(Model model) {
+        model.addAttribute("students", studentDAO.findAll());
+        model.addAttribute("title", "Remove Student");
+        return "student/remove";
+    }
+
+    @RequestMapping(value = "remove", method = RequestMethod.POST)
+    public String processRemoveStudentForm(@RequestParam int[] id) {
+
+        for (int aid : id) {
+            studentDAO.delete(aid);
+        }
+
         return "redirect:";
     }
 }
