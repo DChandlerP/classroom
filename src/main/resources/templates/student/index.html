@@ -5,7 +5,22 @@
   <h1 th:text="${title}">Default Title</h1>
   <p th:unless="${students} and ${students.size()}">No Students Entered</p>
 
+  <table class="table">
 
+      <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Student ID</th>
+          <th>Classroom</th>
+      </tr>
+
+      <tr th:each="student : ${students}">
+          <td th:text="${student.firstName}"></td>
+          <td th:text="${student.lastName}"></td>
+          <td th:text="${student.studentID}"></td>
+          <td th:text="${student.}"></td>
+      </tr>
+  </table>
 </body>
 </html>
 
