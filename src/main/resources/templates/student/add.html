@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+<h1 th:text="${title}">Default Title</h1>
+<form method="post" style="max-width:600px;" th:object="${student}">
+    <div class="form-group">
+        <label th:for="firstName">First Name</label>
+        <input class="form-control" th:field="*{firstName}" />
+        <span th:errors="*{firstName}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="lastName">Last Name</label>
+        <input class="form-control" th:field="*{lastName}" />
+        <span th:errors="*{lastName}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label th:for="studentID">Student ID</label>
+        <input class="form-control" th:field="*{studentID}" />
+        <span th:errors="*{studentID}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="classNumber">Class Number</label>
+        <input class="form-control" th:field="*{classNumber}" />
+        <span th:errors="*{classNumber}" class="error"></span>
+    </div>
+    <input type="submit" value="Add Student" />
+</form>
+</body>
+</html>
