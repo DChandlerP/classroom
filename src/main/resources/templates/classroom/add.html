@@ -6,6 +6,8 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
+<p th:unless="${classrooms} and ${classrooms.size()}">No Classrooms Entered</p>
+
 <form method="post" style="max-width:600px;" th:object="${classroom}">
     <div class="form-group">
         <label th:for="name">Name</label>

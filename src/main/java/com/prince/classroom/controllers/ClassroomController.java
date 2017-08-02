@@ -16,7 +16,7 @@ import javax.validation.Valid;
  * Created by davidprince on 8/1/17.
  */
 @Controller
-@RequestMapping
+@RequestMapping(value = "classroom")
 public class ClassroomController {
 
     @Autowired
@@ -33,7 +33,7 @@ public class ClassroomController {
     public String add(Model model) {
         model.addAttribute(new Classroom());
         model.addAttribute("title", "Add Classroom");
-        return "category/add";
+        return "classroom/add";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
@@ -41,7 +41,7 @@ public class ClassroomController {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Classroom");
-            return "category/add";
+            return "classroom/add";
         }
 
         classroomDAO.save(classroom);

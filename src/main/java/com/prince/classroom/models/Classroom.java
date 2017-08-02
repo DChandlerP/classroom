@@ -22,7 +22,7 @@ public class Classroom {
     private String name;
 
     @OneToMany
-    @JoinColumn(name = "classroom")
+    @JoinColumn(name = "classroom_ID")
     private List<Student> Classes = new ArrayList<>();
 
     public Classroom() {

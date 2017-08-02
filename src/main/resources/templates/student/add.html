@@ -21,9 +21,12 @@
         <span th:errors="*{studentID}" class="error"></span>
     </div>
     <div class="form-group">
-        <label th:for="classNumber">Class Number</label>
-        <input class="form-control" th:field="*{classNumber}" />
-        <span th:errors="*{classNumber}" class="error"></span>
+        <label th:for="classroom">Classroom</label>
+        <select name="classroomId">
+            <option th:each="classroom : ${classrooms}"
+                    th:text="${classroom.name}"
+                    th:value="${classroom.id}"></option>
+        </select>
     </div>
     <input type="submit" value="Add Student" />
 </form>
