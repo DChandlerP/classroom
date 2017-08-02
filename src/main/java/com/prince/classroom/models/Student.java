@@ -1,9 +1,6 @@
 package com.prince.classroom.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedEntityGraph;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -23,9 +20,8 @@ public class Student {
     @NotNull
     private String lastName;
 
-    @NotNull
-    //used numbers to identify classrooms, but this is arbitrary. The number isn't used for calculations.
-    private String classNumber;
+    @ManyToOne
+    private Classroom classroom;
 
     @NotNull
     //Student ID is assigned by institution
@@ -35,11 +31,11 @@ public class Student {
     public Student() {
     }
 
-    public Student(int id, String firstName, String lastName, String classNumber, String studentID) {
+    public Student(int id, String firstName, String lastName, Classroom classroom, String studentID) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.classNumber = classNumber;
+        this.classroom = classroom;
         this.studentID = studentID;
     }
 
@@ -47,16 +43,12 @@ public class Student {
     public String toString() {
         return  firstName  + " " +
                 lastName + " | " + "Class: " +
-                classNumber + " | "+ "Student ID: " +
+                classroom + " | "+ "Student ID: " +
                 studentID ;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -75,12 +67,12 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public String getClassNumber() {
-        return classNumber;
+    public Classroom getClassroom() {
+        return classroom;
     }
 
-    public void setClassNumber(String classNumber) {
-        this.classNumber = classNumber;
+    public void setClassroom(Classroom classroom) {
+        this.classroom = classroom;
     }
 
     public String getStudentID() {
