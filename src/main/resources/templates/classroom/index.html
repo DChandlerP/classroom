@@ -8,11 +8,11 @@
 
 <ul>
     <li th:each="classroom : ${classrooms}">
-        <a th:href="'/cheese/category?id=' + ${category.id}" th:text="${category.name}"></a>
+        <a th:href="'/classroom/classroom?id=' + ${classroom.id}" th:text="${classroom.name}"></a>
     </li>
 </ul>
 
-<p><a href="/category/add">Add Classroom</a></p>
+<p><a href="/classroom/add">Add Classroom</a></p>
 
 </body>
 </html>
